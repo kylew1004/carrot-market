@@ -2,38 +2,34 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-400 py-20 px-20 grid gap-10 min-h-screen">
-      <div className="bg-white p-6 rounded-3xl shadow-xl">
-        <span className="font-semibold text-2xl">Select Item</span>
+    <div className="bg-slate-400 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen"> {/* grid 는 사용하면 모든게 행(row)로 바뀐다. 열을 만들려면 grid-cols 를 하자. */}
+      <div className="bg-white dark:bg-black flex flex-col justify-between p-6 rounded-3xl shadow-xl">
+        <span className="font-semibold dark:text-white text-2xl">Select Item</span>
         <ul>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="flex justify-between my-2 odd:bg-blue-500 even:bg-yellow-50first:bg-teal-50 last:bg-amber-50">
-              <span className="text-gray-500">Grey Chair</span>
-              <span className="font-semibold">$19</span>
-            </div>
-          ))}
+          <div className="flex justify-between my-2 ">
+            <span className="text-gray-500 dark:text-gray-100">Grey Chair</span>
+            <span className="font-semibold dark:text-white">$19</span>
+          </div>
+          <div className="flex justify-between my-2 ">
+            <span className="text-gray-500 dark:text-gray-100">Grey Chair</span>
+            <span className="font-semibold dark:text-white">$19</span>
+          </div>
         </ul>
-        <ul>
-          {["a", "b", "c", ""].map((c, i) => (
-            <li className="bg-red-500 py-2 empty:hidden" key={i}>
-              {c}
-            </li>
-          ))}
-        </ul>
+
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
           <span>Total</span>
           <span className="font-semibold">$10</span>
         </div>
         <button
-         className="mt-5 bg-blue-500 text-white p-3 
+         className="mt-5 bg-blue-500 dark:bg-black dark:border-white dark:border text-white p-3
          text-center rounded-xl w-3/4 mx-auto
-         hover:bg-teal-500 hover:text-black
+         dark:hover:bg-white hover:bg-teal-500 hover:text-black
          active:bg-yellow-500 focus:bg-red 500"> {/* modifier를 통해 많은 스타일 요소를 지정할 수 있다! Super cool~*/}
            Checkout
         </button>
       </div>
       <div className="bg-white overflow-hidden rounded-3xl shadow-xl">
-        <div className="bg-blue-500 p-6 pb-14">
+        <div className="portrait:bg-indigo-600 landscape:bg-teal-500 p-6 pb-14 xl:pb-40"> {/* landscape: 모바일 눕혔을 때 화면, portrait: 세로, 테일윈드는 모바일을 기준으로 정렬됨 */}
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 bg-white relative -top-5">
@@ -54,7 +50,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white p-6 rounded-3xl shadow-xl">
+      <div className="bg-white p-6 rounded-3xl shadow-xl lg:col-span-2 xl:col-span-1">
         <div className="flex mb-5 justify-between items-center">
           <span>⬅️</span>
           <div className="space-x-3">
