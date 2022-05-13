@@ -84,3 +84,10 @@ const Home: NextPage = () => {
   );
 };
 export default Home;
+
+{/* JIT compiler (Just In Time compiler) => 코드를 실시간으로 감시하면서 필요한 클래스를 생성하는 기능 수행
+        <div className="dark:md:hover:bg-teal-400 bg-[url('/vercel.svg')]">
+        <h2 className="text-[97851px] text-[#000]">Hello</h2> 
+        이런 식으로 적으면 클래스가 새로 생성됨과 동시에 텍스트크기나 링크가 생김! awesome!
+      */}
+        
