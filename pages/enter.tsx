@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+
 function cls(...classnames: string[]) {
   return classnames.join(" ");
 }
+
 const Enter: NextPage = () => {
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => setMethod("email");
@@ -50,16 +52,6 @@ const Enter: NextPage = () => {
                 type="email"
                 className="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                 required
-
-    
-        
-          
-    
-
-        
-    
-    @@ -59,6 +60,7 @@ const Enter: NextPage = () => {
-  
               />
             ) : null}
             {method === "phone" ? (
@@ -72,16 +64,6 @@ const Enter: NextPage = () => {
                   type="number"
                   className="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md rounded-l-none shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
                   required
-
-    
-          
-            
-    
-
-          
-    
-    
-  
                 />
               </div>
             ) : null}

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const Upload: NextPage = () => {
   return (
-    <div className="px-4 py-16">
+    <div className="px-4 py-10">
       <div>
         <label className="w-full cursor-pointer text-gray-600 hover:border-orange-500 hover:text-orange-500 flex items-center justify-center border-2 border-dashed border-gray-300 h-48 rounded-md">
           <svg
@@ -61,13 +61,8 @@ const Upload: NextPage = () => {
   );
 };
 
-    
-          
-            
-    
-
-          
-    
-    
-  
 export default Upload;
+
+    
+{/* lable은 input을 도와주는 설명속성, htmlfor는 html의 for속성과 같은데 id값과 일치시켜서 input을 가져오기 쉽게 한다.
+pointer-events-none은 설명드래그 못하게 막는거다. text-area는 여러줄에 걸쳐서 text를 적는거다.*/}
