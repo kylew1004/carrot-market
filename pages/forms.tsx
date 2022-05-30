@@ -78,4 +78,13 @@ export default function Forms() {
   onError (SubmitErrorHandler) (오류 콜백)
   (errors: Object, e?: Event) => void
 
+  validate
+  유효성을 검사할 인수로 콜백 함수를 전달하거나 콜백 함수의 개체를 전달하여 모든 유효성을 검사할 수 있습니다.
+  ```
+  < input
+  {...register("test", {
+  validate: value => value === '1'
+  })}
+  / >
+  ```
 */}
