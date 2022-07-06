@@ -65,7 +65,7 @@ const CommunityPostDetail: NextPage = () => {
             <div className="w-8 h-8 bg-slate-200 rounded-full" />
             <div>
               <span className="text-sm block font-medium text-gray-700">
-                Steve Jebs
+                GangYub
               </span>
               <span className="text-xs text-gray-500 block ">2시간 전</span>
               <p className="text-gray-700 mt-2">

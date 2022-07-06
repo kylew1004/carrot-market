@@ -55,7 +55,7 @@ const ItemDetail: NextPage = () => {
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Similar items</h2>
           <div className=" mt-6 grid grid-cols-2 gap-4">
-            {...Array(6).map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <div key={i}>
                 <div className="h-56 w-full mb-4 bg-slate-300" />
                 <h3 className="text-gray-700 -mb-1">Galaxy S60</h3>
