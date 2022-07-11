@@ -1,23 +1,18 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { withIronSessionApiRoute } from "iron-session/next";
 
-export interface ResponseType {
-  ok: boolean;
-  [key: string]: any;
+declare module "iron-session" {
+  interface IronSessionData {
+    user?: {
+      id: number;
+    };
+  }
 }
 
-export default function withHandler(
-  method: "GET" | "POST" | "DELETE",
-  fn: (req: NextApiRequest, res: NextApiResponse) => void
-) {
-  return async function (req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== method) {
-      return res.status(405).end();
-    }
-    try {
-      await fn(req, res);
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({ error });
-    }
-  };
+const cookieOptions = {
+  cookieName: "carrotsession",
+  password: process.env.COOKIE_PASSWORD!,
+};
+
+export function withApiSession(fn: any) {
+  return withIronSessionApiRoute(fn, cookieOptions);
 }
